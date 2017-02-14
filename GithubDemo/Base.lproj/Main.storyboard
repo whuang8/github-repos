@@ -89,6 +89,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="Vuo-Vg-gdA" id="7xe-hj-it0"/>
+                                            <outlet property="repoDescriptionLabel" destination="meo-Nb-TaJ" id="wWP-mL-nWz"/>
+                                            <outlet property="repoForkLabel" destination="VHz-oo-BjR" id="NaY-Ht-aL3"/>
+                                            <outlet property="repoNameLabel" destination="W0g-uJ-1Um" id="WRG-i9-Kga"/>
+                                            <outlet property="repoOwnerLabel" destination="3DZ-6q-Aum" id="zis-eR-3ii"/>
+                                            <outlet property="repoStarsLabel" destination="F0U-aB-6lw" id="MRN-t6-dbL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

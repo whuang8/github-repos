@@ -62,6 +62,17 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell") as! RepoCell
+        let repo = repos[indexPath.row]
+        cell.repoNameLabel.text = repo.name
+        cell.repoDescriptionLabel.text = repo.repoDescription
+        cell.repoOwnerLabel.text = repo.ownerHandle
+        cell.repoStarsLabel.text = "\(repo.stars)"
+        cell.repoForkLabel.text = "\(repo.forks)"
+        if let urlString = repo.ownerAvatarURL {
+            if let url = URL(string: urlString) {
+                cell.avatarImageView.setImageWith(url)
+            }
+        }
         return cell
 
     }
