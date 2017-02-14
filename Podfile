@@ -8,6 +8,7 @@ target 'GithubDemo' do
   # Pods for GithubDemo
   pod 'AFNetworking', '~> 2.0'
   pod 'MBProgressHUD', '~> 0.9.1'
+  pod 'Emoji-swift'
 
   target 'GithubDemoTests' do
     inherit! :search_paths

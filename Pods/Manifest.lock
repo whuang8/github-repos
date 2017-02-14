@@ -20,16 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Emoji-swift (0.0.4)
   - MBProgressHUD (0.9.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - Emoji-swift
   - MBProgressHUD (~> 0.9.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  Emoji-swift: cb7b0fdbd5c95906615172181921167af64175b0
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
 
-PODFILE CHECKSUM: 642736e81508fe12213a4f80e61aa5c79c78ee15
+PODFILE CHECKSUM: 5c2188b81b251c5c4d5ce1eb080828bba5f5a516
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1

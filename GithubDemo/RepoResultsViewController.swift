@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import Emoji
 
 // Main ViewController
 class RepoResultsViewController: UIViewController, UITableViewDataSource {
@@ -34,6 +35,9 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
         // Perform the first search when the view controller first loads
         doSearch()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
     }
 
     // Perform the search.
@@ -63,11 +67,11 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell") as! RepoCell
         let repo = repos[indexPath.row]
-        cell.repoNameLabel.text = repo.name
-        cell.repoDescriptionLabel.text = repo.repoDescription
+        cell.repoNameLabel.text = repo.name?.emojiUnescapedString
+        cell.repoDescriptionLabel.text = repo.repoDescription?.emojiUnescapedString
         cell.repoOwnerLabel.text = repo.ownerHandle
-        cell.repoStarsLabel.text = "\(repo.stars)"
-        cell.repoForkLabel.text = "\(repo.forks)"
+        cell.repoStarsLabel.text = "\(repo.stars!)"
+        cell.repoForkLabel.text = "\(repo.forks!)"
         if let urlString = repo.ownerAvatarURL {
             if let url = URL(string: urlString) {
                 cell.avatarImageView.setImageWith(url)
