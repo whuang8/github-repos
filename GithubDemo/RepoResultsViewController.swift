@@ -117,6 +117,7 @@ extension RepoResultsViewController: SettingsPresentingViewControllerDelegate {
     }
     
     func didCancelSettings() {
+        print(self.searchSettings.minStars)
         // Do nothing?
     }
 }

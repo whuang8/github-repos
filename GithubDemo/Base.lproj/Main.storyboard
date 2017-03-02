@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="1071" y="-557"/>
         </scene>
-        <!--Search Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="hz5-WM-HbZ">
             <objects>
                 <viewController id="ozF-TB-EWk" customClass="SearchSettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,16 +170,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7D-7n-swF">
                                 <rect key="frame" x="0.0" y="114" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYm-Tg-9hQ">
-                                        <rect key="frame" x="8" y="15" width="121" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYm-Tg-9hQ">
+                                        <rect key="frame" x="8" y="15" width="121" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tXZ-lQ-woN">
-                                        <rect key="frame" x="169" y="10" width="154" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tXZ-lQ-woN">
+                                        <rect key="frame" x="187" y="10" width="150" height="31"/>
                                         <connections>
                                             <action selector="onSliderValueChanged:" destination="ozF-TB-EWk" eventType="valueChanged" id="et8-TF-9Nu"/>
                                         </connections>
@@ -193,8 +191,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tXZ-lQ-woN" secondAttribute="bottom" constant="10" id="QSi-JR-6cR"/>
                                     <constraint firstAttribute="trailing" secondItem="7rp-eV-toU" secondAttribute="trailing" constant="8" id="X05-kr-9CT"/>
+                                    <constraint firstAttribute="trailing" secondItem="tXZ-lQ-woN" secondAttribute="trailing" constant="40" id="aB4-Ae-Vez"/>
+                                    <constraint firstItem="jYm-Tg-9hQ" firstAttribute="top" secondItem="l7D-7n-swF" secondAttribute="top" constant="15" id="dYC-bA-thI"/>
+                                    <constraint firstItem="tXZ-lQ-woN" firstAttribute="leading" secondItem="jYm-Tg-9hQ" secondAttribute="trailing" constant="60" id="e8U-9U-asn"/>
                                     <constraint firstItem="7rp-eV-toU" firstAttribute="top" secondItem="l7D-7n-swF" secondAttribute="top" constant="15" id="nC4-Ue-DFX"/>
+                                    <constraint firstAttribute="bottom" secondItem="jYm-Tg-9hQ" secondAttribute="bottom" constant="15" id="nI2-jL-DYU"/>
+                                    <constraint firstItem="tXZ-lQ-woN" firstAttribute="top" secondItem="l7D-7n-swF" secondAttribute="top" constant="10" id="pAv-ZO-DGI"/>
+                                    <constraint firstItem="jYm-Tg-9hQ" firstAttribute="leading" secondItem="l7D-7n-swF" secondAttribute="leading" constant="8" id="sc4-r4-PIS"/>
                                     <constraint firstAttribute="bottom" secondItem="7rp-eV-toU" secondAttribute="bottom" constant="15" id="vNV-b1-C44"/>
                                     <constraint firstAttribute="height" constant="50" id="vxq-Az-yQU"/>
                                 </constraints>
@@ -207,7 +212,7 @@
                             <constraint firstAttribute="trailing" secondItem="l7D-7n-swF" secondAttribute="trailing" id="kTf-Cg-5UX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="l1Q-mU-VeN">
+                    <navigationItem key="navigationItem" title="Settings" id="l1Q-mU-VeN">
                         <barButtonItem key="leftBarButtonItem" title="Save" id="Kca-Rb-e4q">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="ozF-TB-EWk" id="ljd-zH-fJx"/>
