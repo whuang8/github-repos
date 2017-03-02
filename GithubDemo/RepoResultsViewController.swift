@@ -47,12 +47,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
         // Perform request to GitHub API to get the list of repositories
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
-
-            // Print the returned repositories to the output window
-            for repo in newRepos {
-                print(repo)
-                self.repos.append(repo)
-            }   
+            self.repos = newRepos  
             self.tableView.reloadData()
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
@@ -80,6 +75,13 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         return cell
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController = segue.destination as! UINavigationController
+        let vc = navController.topViewController as! SearchSettingsViewController
+        vc.delegate = self
+        vc.settings = self.searchSettings
+    }
 }
 
 // SearchBar methods
@@ -106,3 +108,16 @@ extension RepoResultsViewController: UISearchBarDelegate {
         doSearch()
     }
 }
+
+// Settings methods
+extension RepoResultsViewController: SettingsPresentingViewControllerDelegate {
+    func didSaveSettings(settings: GithubRepoSearchSettings) {
+        self.searchSettings.minStars = settings.minStars
+        doSearch()
+    }
+    
+    func didCancelSettings() {
+        
+    }
+}
+

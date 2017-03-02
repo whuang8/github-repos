@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263012191E67A89C000EA7D3 /* SearchSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263012181E67A89C000EA7D3 /* SearchSettingsViewController.swift */; };
+		2630121C1E67AFBA000EA7D3 /* SettingsPresentingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630121B1E67AFBA000EA7D3 /* SettingsPresentingViewControllerDelegate.swift */; };
 		264B09541E4C27E600E590AA /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264B09531E4C27E600E590AA /* RepoCell.swift */; };
 		2F42CA4E3F3642740EC8E298 /* Pods_GithubDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31B77F051ECB4734B31A292 /* Pods_GithubDemoTests.framework */; };
 		36A23BF265A8B5DD8B47C248 /* Pods_GithubDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972B058EEC9499B05D1F930 /* Pods_GithubDemo.framework */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		1E529DFE5EFBC22A0ECE209C /* Pods-GithubDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubDemoTests/Pods-GithubDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		263012181E67A89C000EA7D3 /* SearchSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSettingsViewController.swift; sourceTree = "<group>"; };
+		2630121B1E67AFBA000EA7D3 /* SettingsPresentingViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresentingViewControllerDelegate.swift; sourceTree = "<group>"; };
 		264B09531E4C27E600E590AA /* RepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		34CBA2B0A0E031A1D298899E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9A2D3089EA02005DDEBB75 /* Pods-GithubDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubDemoTests/Pods-GithubDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2630121A1E67AF77000EA7D3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2630121B1E67AFBA000EA7D3 /* SettingsPresentingViewControllerDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		26D6710C1E529B0600AEA98D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				6B2DDEEF1B02911A00D25281 /* RepoResultsViewController.swift */,
+				263012181E67A89C000EA7D3 /* SearchSettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 		6B2DDEEA1B02911A00D25281 /* GithubDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2630121A1E67AF77000EA7D3 /* Protocols */,
 				26D6710E1E529B2400AEA98D /* Models */,
 				26D6710D1E529B0F00AEA98D /* ViewControllers */,
 				26D6710C1E529B0600AEA98D /* Views */,
@@ -235,6 +249,7 @@
 				TargetAttributes = {
 					6B2DDEE71B02911A00D25281 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = KDGWDMD53Y;
 						LastSwiftMigration = 0800;
 					};
 					6B2DDEFC1B02911A00D25281 = {
@@ -381,9 +396,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2630121C1E67AFBA000EA7D3 /* SettingsPresentingViewControllerDelegate.swift in Sources */,
 				264B09541E4C27E600E590AA /* RepoCell.swift in Sources */,
 				6B2DDEF01B02911A00D25281 /* RepoResultsViewController.swift in Sources */,
 				6B9F8B0A1B02B8E5001483E7 /* GithubRepoSearchSettings.swift in Sources */,
+				263012191E67A89C000EA7D3 /* SearchSettingsViewController.swift in Sources */,
 				6B2DDEEE1B02911A00D25281 /* AppDelegate.swift in Sources */,
 				6B2DDF0E1B02970A00D25281 /* GithubRepo.swift in Sources */,
 			);
@@ -516,10 +533,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5EDD6C651F700BECD821A77 /* Pods-GithubDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KDGWDMD53Y;
 				INFOPLIST_FILE = GithubDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hellowilliam.GithubDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -530,10 +550,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D787DCA4BDFFA74DC9217E77 /* Pods-GithubDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KDGWDMD53Y;
 				INFOPLIST_FILE = GithubDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hellowilliam.GithubDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
