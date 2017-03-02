@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D28-hb-E3S" id="fz2-EG-WVC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vuo-Vg-gdA">
@@ -177,13 +177,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="tXZ-lQ-woN">
-                                        <rect key="frame" x="203" y="10" width="120" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tXZ-lQ-woN">
+                                        <rect key="frame" x="169" y="10" width="154" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onSliderValueChanged:" destination="ozF-TB-EWk" eventType="valueChanged" id="et8-TF-9Nu"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rp-eV-toU">
-                                        <rect key="frame" x="359" y="15" width="8" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rp-eV-toU">
+                                        <rect key="frame" x="359" y="15" width="8" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -191,6 +193,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7rp-eV-toU" secondAttribute="trailing" constant="8" id="X05-kr-9CT"/>
+                                    <constraint firstItem="7rp-eV-toU" firstAttribute="top" secondItem="l7D-7n-swF" secondAttribute="top" constant="15" id="nC4-Ue-DFX"/>
+                                    <constraint firstAttribute="bottom" secondItem="7rp-eV-toU" secondAttribute="bottom" constant="15" id="vNV-b1-C44"/>
                                     <constraint firstAttribute="height" constant="50" id="vxq-Az-yQU"/>
                                 </constraints>
                             </view>
@@ -214,6 +219,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="minimumStarsLabel" destination="7rp-eV-toU" id="Chk-Hn-pRm"/>
+                        <outlet property="minimumStarsSlider" destination="tXZ-lQ-woN" id="Vlv-UZ-8eo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8e-1N-Hn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

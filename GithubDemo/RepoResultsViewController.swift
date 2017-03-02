@@ -112,12 +112,12 @@ extension RepoResultsViewController: UISearchBarDelegate {
 // Settings methods
 extension RepoResultsViewController: SettingsPresentingViewControllerDelegate {
     func didSaveSettings(settings: GithubRepoSearchSettings) {
-        self.searchSettings.minStars = settings.minStars
+        self.searchSettings = settings
         doSearch()
     }
     
     func didCancelSettings() {
-        
+        // Do nothing?
     }
 }
 

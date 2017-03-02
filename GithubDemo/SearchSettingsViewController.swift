@@ -10,13 +10,16 @@ import UIKit
 
 class SearchSettingsViewController: UIViewController {
     
+    @IBOutlet weak var minimumStarsSlider: UISlider!
+    @IBOutlet weak var minimumStarsLabel: UILabel!
     var delegate: SettingsPresentingViewControllerDelegate?
     var settings: GithubRepoSearchSettings!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        minimumStarsSlider.value = Float(settings.minStars)
+        minimumStarsLabel.text = "\(Int(minimumStarsSlider.value))"
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +37,10 @@ class SearchSettingsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onSliderValueChanged(_ sender: Any) {
+        minimumStarsLabel.text = "\(Int(minimumStarsSlider.value))"
+        settings.minStars = Int(minimumStarsSlider.value)
+    }
     /*
     // MARK: - Navigation
 
